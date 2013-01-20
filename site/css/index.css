@@ -40,7 +40,7 @@ header
     display: inline-block;
     vertical-align: middle;
 
-    background: red;
+    background: #f82857;
     color: #fff;
 }
 
@@ -156,7 +156,7 @@ header
 .b-speaker__person-link
 {
     text-decoration: none;
-    color: red;
+    color: #f82857;
 }
 
 .b-speaker__person-link:hover
@@ -213,7 +213,7 @@ footer
 .b-footer-block__link
 {
     text-decoration: none;
-    color: red;
+    color: #f82857;
 }
 
 .b-footer-block__link:hover
