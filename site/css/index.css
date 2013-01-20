@@ -103,7 +103,7 @@ header
     font-size: 480%;
     font-weight: bold;
 
-    margin-bottom: 0.75em;
+    margin-bottom: 1.5em;
 
     text-align: center;
 
@@ -153,13 +153,13 @@ header
     margin-bottom: 1em;
 }
 
-.b-speaker__person-link
+.b-speaker__link
 {
     text-decoration: none;
     color: #f82857;
 }
 
-.b-speaker__person-link:hover
+.b-speaker__link:hover
 {
     text-decoration: underline;
 }
