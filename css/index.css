@@ -8,12 +8,12 @@ body, html
 
 html
 {
-    background: #f3f2f0 url(img/bg-body.js);
+    background: #f3f2f0 url(/img/bg-body.jpg);
 }
 
 body
 {
-    font: 10px/1.4 'Droid Sans',sans-serif;
+    font: 10px/1.4 Helvetica,sans-serif;
 
     max-width: 1140px;
     margin: 0 auto;
@@ -31,11 +31,14 @@ header
 
 .b-head-logo
 {
-    font-size: 190%;
+    font-size: 290%;
+    line-height: 90%;
 
     width: 98px;
     height: 20px;
-    padding: 80px 0 0 2px;
+    padding: 50px 0 0 2px;
+
+    height: 50px;
 
     display: inline-block;
     vertical-align: middle;
@@ -97,6 +100,10 @@ header
     border-color: transparent #fff;
 }
 
+.b-head-description__location {
+    color: inherit;
+}
+
 /* Содержимое */
 .b-next-event
 {
@@ -108,7 +115,7 @@ header
     text-align: center;
 
     text-shadow: 0 1px 1px #666;
-    color: #1EA0CE;
+    color: #333;
 }
 
 /* Спикеры */
@@ -129,7 +136,7 @@ header
     -o-box-sizing: border-box;
     box-sizing: border-box;
 
-    background: #E1E1E1;
+    background: #F5F6F7;
     border: 10px solid #fff;
     -webkit-box-shadow: 1px 1px 10px #ABABAB;
     -moz-box-shadow: 1px 1px 10px #ABABAB;
@@ -143,8 +150,8 @@ header
 
     margin-bottom: 1em;
 
-    text-shadow: 0 1px 1px #666;
-    color: #1EA0CE;
+    text-shadow: 0 1px 1px #AAA;
+    color: #333;
 }
 
 .b-speaker__person
