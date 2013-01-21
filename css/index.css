@@ -67,6 +67,17 @@ header
     filter: drop-shadow(1px 1px 10px #ABABAB);
 }
 
+.b-head-description__location
+{
+    text-decoration: none;
+    color: #f82857;
+}
+
+.b-head-description__location:hover
+{
+    text-decoration: underline;
+}
+
 .b-head-description_triangle_left
 {
   margin-left: 30px;
@@ -98,10 +109,6 @@ header
 
     border-width: 18px 18px 18px 0;
     border-color: transparent #fff;
-}
-
-.b-head-description__location {
-    color: inherit;
 }
 
 /* Содержимое */
@@ -136,7 +143,7 @@ header
     -o-box-sizing: border-box;
     box-sizing: border-box;
 
-    background: #F5F6F7;
+    background: #F3F2F0;
     border: 10px solid #fff;
     -webkit-box-shadow: 1px 1px 10px #ABABAB;
     -moz-box-shadow: 1px 1px 10px #ABABAB;
