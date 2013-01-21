@@ -63,8 +63,8 @@ header
     border: 5px solid #e1e1e1;
     color: #223035;
     background: #fff;
-    -webkit-filter: drop-shadow(1px 1px 10px #ABABAB);
-    filter: drop-shadow(1px 1px 10px #ABABAB);
+    -webkit-filter: drop-shadow(0 0 5px #666);
+    filter: drop-shadow(0 0 5px #666);
 }
 
 .b-head-description__location
