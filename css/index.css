@@ -43,7 +43,7 @@ header
     display: inline-block;
     vertical-align: middle;
 
-    background: #f82857;
+    background: red;
     color: #fff;
 }
 
@@ -70,7 +70,7 @@ header
 .b-head-description__location
 {
     text-decoration: none;
-    color: #f82857;
+    color: red;
 }
 
 .b-head-description__location:hover
@@ -117,12 +117,27 @@ header
     font-size: 480%;
     font-weight: bold;
 
-    margin-bottom: 1.5em;
-
     text-align: center;
 
     text-shadow: 0 1px 1px #666;
     color: #333;
+}
+
+.b-igo
+{
+    font-size: 400%;
+    font-weight: bold;
+
+    margin-bottom: 1.5em;
+
+    text-align: center;
+
+    color: red;
+}
+
+.b-igo .b-igo__link
+{
+    color: inherit;
 }
 
 /* Спикеры */
@@ -170,7 +185,7 @@ header
 .b-speaker__link
 {
     text-decoration: none;
-    color: #f82857;
+    color: red;
 }
 
 .b-speaker__link:hover
@@ -227,7 +242,7 @@ footer
 .b-footer-block__link
 {
     text-decoration: none;
-    color: #f82857;
+    color: red;
 }
 
 .b-footer-block__link:hover
