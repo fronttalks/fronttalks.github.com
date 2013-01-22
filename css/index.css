@@ -138,6 +138,12 @@ header
 .b-igo .b-igo__link
 {
     color: inherit;
+    text-decoration: none;
+}
+
+.b-igo .b-igo__link:hover
+{
+    text-decoration: underline;
 }
 
 /* Спикеры */
