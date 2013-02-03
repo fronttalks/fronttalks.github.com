@@ -1,17 +1,19 @@
 <!doctype html>
 <html>
 <head>
-    <title>EkbConf here ololo!</title>
+    <title>EkbFrontTalks</title>
 
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" charset="utf-8"/>
 </head>
 <body>
     <header>
-        <div class="b-head-logo">Ekb<br>Front</div>
-        <div class="b-head-description b-head-description_triangle_left">
-            Ekaterinburg Front-End Meetup &ndash; это встречи и общение про вёрстку, JavaScript и&nbsp;всё, что связано с&nbsp;Front-End разработкой. Место встречи: Бар&nbsp;Горький, <a href="http://maps.yandex.ru/-/CVFtF41m" target="_blank" class="b-head-description__location">Екатеринбург, улица&nbsp;Горького&nbsp;63</a>. Начало в&nbsp;12:00
+        <div class="b-head-logo">
+            <div class="b-head-logo__text">Ekb<br/>FrontTalks</div>
         </div>
+        <h1 class="b-head-description b-head-description_triangle_left">
+            Ekaterinburg Front End Talks &ndash; это встречи и общение про вёрстку, JavaScript и&nbsp;всё, что связано с&nbsp;Front End разработкой. Место встречи: Бар&nbsp;Горький, <a href="http://maps.yandex.ru/-/CVFtF41m" target="_blank" class="b-head-description__location">Екатеринбург, улица&nbsp;Горького&nbsp;63</a>. Начало в&nbsp;12:00
+        </h1>
     </header>
 
     <div class="b-next-event">Первая встреча <span title="Это суббота">16 февраля 2013</span></div>
@@ -19,29 +21,30 @@
 
     <div class="b-speakers">
         <div class="b-speaker">
+            <div class="b-speaker__talk">Послушные лэйауты</div>
+            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/outring">Василий Аксёнов (@outring)</a></div>
+            <div class="b-speaker__thezises">Ни одна из технологий реализации раскладки элементов на странице, из используемых сейчас, изначально для этого не предназначалась. Какие же технологии для этого предназначены, какие лучше и чем плохи старые?</div>
+        </div>
+        <div class="b-speaker">
             <div class="b-speaker__talk">Немного о grunt.js</div>
             <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/iadramelk">Алексей Иванов (@iadramelk)</a></div>
             <div class="b-speaker__thezises">Автоматизация сборки и упаковки ресурсов, а также почему в версии 0.4.0 все будет гораздо лучше, чем сейчас.</div>
         </div>
         <div class="b-speaker">
-            <div class="b-speaker__talk">Отладка расширений для IE и FF</div>
+            <div class="b-speaker__talk">Расширений для IE и FF</div>
             <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/denischistyakov">Денис Чистяков (@denischistyakov)</a></div>
-        </div>
-        <div class="b-speaker">
-            <div class="b-speaker__talk">Послушные лэйауты</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/outring">Василий Аксёнов (@outring)</a></div>
-            <div class="b-speaker__thezises">Ни одна из технологий реализации раскладки элементов на странице, из используемых сейчас, изначально для этого не предназначалась. Какие же технологии для этого предназначены, какие лучше и чем плохи старые?</div>
+            <div class="b-speaker__thezises">Я расскажу вам об особенностях отладки расширений для браузеров, а также о проблемах, с которыми вы не столкнетесь при разработке обычных сайтов</div>
         </div>
         <div class="b-speaker">
             <div class="b-speaker__talk">LMD &ndash; способ собирать несобираемое</div>
             <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/azproduction">Михаил Давыдов (@azproduction)</a></div>
             <div class="b-speaker__thezises">Я устал от AMD, пристально изучал другие сборщики и загрузчики &ndash; все не то... и мне пришлось сделать сборщик модулей моей мечты. В моем докладе о том, какие варианты я рассматривал и что получил в итоге.</div>
         </div>
-        <div class="b-speaker">
-            <div class="b-speaker__talk">Парадигма «Render&nbsp;&amp;&nbsp;React»</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/olmokhov">Олег Мохов (@olmokhov)</a></div>
-            <div class="b-speaker__thezises">Современные веб-фреймворки зачастую забывают про то, что надо уметь не только отрисовывать HTML, но и реагировать на действия пользователя без перерисовки всей страницы.</div>
-        </div>
+        <!--<div class="b-speaker">-->
+            <!--<div class="b-speaker__talk">Парадигма «Render&nbsp;&amp;&nbsp;React»</div>-->
+            <!--<div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/olmokhov">Олег Мохов (@olmokhov)</a></div>-->
+            <!--<div class="b-speaker__thezises">Современные веб-фреймворки зачастую забывают про то, что надо уметь не только отрисовывать HTML, но и реагировать на действия пользователя без перерисовки всей страницы.</div>-->
+        <!--</div>-->
         <div class="b-speaker b-speaker_type_empty">
             <div class="b-speaker__talk">Слот свободен</div>
             <div class="b-speaker__person">и он может стать вашим! Напишите нам, что вы есть и что-то хотите рассказать, прямо сейчас.</div>
@@ -49,10 +52,15 @@
         </div>
     </div>
 
+    <div class="b-about">
+        <h2 class="b-about__header">О мероприятии</h2>
+        <p class="b-about__description">В Екатеринбурге много Front End разработчиков c уникальным опытом и хорошими знаниями, которыми они не знают, где поделиться. Именно поэтому нам пришла идея организовать регулярные встречи Frontend'еров Екатеринбурга. Формат очень прост: сначала идут 6 мини-докладов по 15 минут, а затем неформальное общение за кружечкой чая, кофе или другого любимого напитка на темы веб-разработки.</p>
+    </div>
+
     <footer>
         <div class="b-footer-block">
             <div class="b-footer-block__title">Оставайтесь на связи</div>
-            <div class="b-footer-block__description">Следите за событиями в твиттере <a class="b-footer-block__link" href="https://twitter.com/search/realtime?q=%23EkbFront&src=typd">#EkbFront</a></div>
+            <div class="b-footer-block__description">Следите за событиями в твиттере <a class="b-footer-block__link" href="https://twitter.com/search/realtime?q=%23EkbFront&src=typd">#eft</a></div>
         </div>
         <div class="b-footer-block">
             <div class="b-footer-block__title">Команда</div>

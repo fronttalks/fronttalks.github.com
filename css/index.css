@@ -8,7 +8,7 @@ body, html
 
 html
 {
-    background: #f3f2f0 url(/img/bg-body.jpg);
+    background: #f3f2f0 url(/img/bg.jpg);
 }
 
 body
@@ -31,7 +31,9 @@ header
 
 .b-head-logo
 {
-    font-size: 290%;
+    position: relative;
+
+    font-size: 200%;
     line-height: 90%;
 
     width: 98px;
@@ -47,9 +49,16 @@ header
     color: #fff;
 }
 
+.b-head-logo__text
+{
+    position: absolute;
+    bottom: 0;
+}
+
 .b-head-description
 {
     font-size: 200%;
+    font-weight: normal;
 
     position: relative;
 
@@ -60,11 +69,11 @@ header
     margin: 1em 0;
     width: 920px;
 
-    border: 5px solid #e1e1e1;
+    border: 5px solid #e7e0d3;
     color: #223035;
     background: #fff;
-    -webkit-filter: drop-shadow(0 0 5px #666);
-    filter: drop-shadow(0 0 5px #666);
+    -webkit-filter: drop-shadow(0 0 5px rgba(59, 59, 59, 0.3));
+    filter: drop-shadow(0 0 5px rgba(59, 59, 59, 0.3));
 }
 
 .b-head-description__location
@@ -125,36 +134,88 @@ header
 
 .b-igo
 {
-    font-size: 400%;
-    font-weight: bold;
-
-    margin-bottom: 1.5em;
+    margin: 2em 0 6em 0;
 
     text-align: center;
 
-    color: red;
 }
 
-.b-igo .b-igo__link
+.b-igo__link
 {
-    color: inherit;
+    position: relative;
+    font-size: 350%;
+
+    padding: 12px 120px 10px;
+
     text-decoration: none;
+    text-shadow: 0 -1px #940219;
+
+    color: #fff;
+    background-color: #f00;
+    background-image: -webkit-linear-gradient(top, #f00, #db0e12);
+    background-image:    -moz-linear-gradient(top, #f00, #db0e12);
+    background-image:     -ms-linear-gradient(top, #f00, #db0e12);
+    background-image:      -o-linear-gradient(top, #f00, #db0e12);
+    background-image:         linear-gradient(to bottom, #f00, #db0e12);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45), 0 2px 1px 1px rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45), 0 2px 1px 1px rgba(255, 255, 255, 0.5) inset;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45), 0 2px 1px 1px rgba(255, 255, 255, 0.5) inset;
+    border-radius: 50px;
+}
+.b-igo__link:after
+{
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    top: -8px;
+    bottom: -8px;
+    z-index: -1;
+
+    content: '';
+
+    display: block;
+
+    background: #692a00;
+    opacity: 0.1;
+    border-radius: inherit;
 }
 
-.b-igo .b-igo__link:hover
+.b-igo__link:hover
 {
-    text-decoration: underline;
+    background-color: #db0e12;
+    background-image: -webkit-linear-gradient(top, #f00, #db0e12 50%);
+    background-image:    -moz-linear-gradient(top, #f00, #db0e12 50%);
+    background-image:     -ms-linear-gradient(top, #f00, #db0e12 50%);
+    background-image:      -o-linear-gradient(top, #f00, #db0e12 50%);
+    background-image:         linear-gradient(to bottom, #f00, #db0e12 50%);
+}
+
+.b-igo__link:active
+{
+    top: 1px;
+    -webkit-box-shadow: 0 0 6px 0 rgba(73, 0, 0, 0.3) inset;
+    -moz-box-shadow: 0 0 6px 0 rgba(73, 0, 0, 0.3) inset;
+    box-shadow: 0 0 6px 0 rgba(73, 0, 0, 0.3) inset;
+}
+
+@keyframes jump { 
+    0% {top: 0;} 
+    50% {top: -3px;} 
+    100% {top: 0;} 
 }
 
 /* Спикеры */
 .b-speaker
 {
+    position: relative;
+
     font-size: 160%;
 
     display: inline-block;
     vertical-align: top;
 
     width: 30%;
+    min-height: 270px;
     padding: 10px;
     margin: 0 0 2% 2%;
 
@@ -164,11 +225,49 @@ header
     -o-box-sizing: border-box;
     box-sizing: border-box;
 
-    background: #F3F2F0;
+    background: #f8f5f0;
     border: 10px solid #fff;
-    -webkit-box-shadow: 1px 1px 10px #ABABAB;
-    -moz-box-shadow: 1px 1px 10px #ABABAB;
-    box-shadow: 1px 1px 10px #ABABAB;
+    /*-webkit-box-shadow: 1px 1px 10px #ABABAB;*/
+    /*-moz-box-shadow: 1px 1px 10px #ABABAB;*/
+    /*box-shadow: 1px 1px 10px #ABABAB;*/
+
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.b-speaker:before,
+.b-speaker:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+
+.b-speaker:before,
+.b-speaker:after {
+    bottom:10px;
+    left:5px;
+    width:50%;
+    height:20%;
+    max-width:4000px;
+    max-height:2000px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-3deg);
+       -moz-transform:rotate(-3deg);
+        -ms-transform:rotate(-3deg);
+         -o-transform:rotate(-3deg);
+            transform:rotate(-3deg);
+}
+
+.b-speaker:after {
+    right:5px;
+    left:auto;
+    -webkit-transform:rotate(3deg);
+       -moz-transform:rotate(3deg);
+        -ms-transform:rotate(3deg);
+         -o-transform:rotate(3deg);
+            transform:rotate(3deg);
 }
 
 .b-speaker__talk
@@ -209,6 +308,23 @@ header
 .b-speaker_type_empty .b-speaker__person
 {
     color: #888;
+}
+
+.b-about
+{
+    margin: 0 3% 3em;
+}
+
+.b-about__header
+{
+    font-size: 300%;
+    margin-bottom: 0.5em;
+}
+
+.b-about__description
+{
+    font-size: 160%;
+    line-height: 1.5;
 }
 
 /* Подвалище */
