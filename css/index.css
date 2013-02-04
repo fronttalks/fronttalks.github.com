@@ -161,6 +161,7 @@ header
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45), 0 2px 1px 1px rgba(255, 255, 255, 0.5) inset;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45), 0 2px 1px 1px rgba(255, 255, 255, 0.5) inset;
     border-radius: 50px;
+
 }
 .b-igo__link:after
 {
@@ -198,12 +199,6 @@ header
     box-shadow: 0 0 6px 0 rgba(73, 0, 0, 0.3) inset;
 }
 
-@keyframes jump { 
-    0% {top: 0;} 
-    50% {top: -3px;} 
-    100% {top: 0;} 
-}
-
 /* Спикеры */
 .b-speaker
 {
@@ -215,7 +210,7 @@ header
     vertical-align: top;
 
     width: 30%;
-    min-height: 270px;
+    min-height: 300px;
     padding: 10px;
     margin: 0 0 2% 2%;
 
@@ -231,9 +226,9 @@ header
     /*-moz-box-shadow: 1px 1px 10px #ABABAB;*/
     /*box-shadow: 1px 1px 10px #ABABAB;*/
 
-    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.05) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.05) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.05) inset;
 }
 .b-speaker:before,
 .b-speaker:after {
@@ -312,13 +307,16 @@ header
 
 .b-about
 {
-    margin: 0 3% 3em;
+    margin: 0 3% 5em;
 }
 
 .b-about__header
 {
     font-size: 300%;
+
     margin-bottom: 0.5em;
+
+    text-shadow: 0 1px 1px #AAA;
 }
 
 .b-about__description
@@ -359,6 +357,11 @@ footer
     font-weight: bold;
 
     margin-bottom: 1em;
+}
+
+.b-footer-block__description
+{
+    margin-bottom: 0.5em;
 }
 
 .b-footer-block__link
