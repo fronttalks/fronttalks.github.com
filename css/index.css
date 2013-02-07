@@ -132,6 +132,17 @@ header
     color: #333;
 }
 
+.b-meetup-place
+{
+    font-size: 280%;
+    font-weight: bold;
+
+    text-align: center;
+
+    text-shadow: 0 1px 1px #fff;
+    color: #333;
+}
+
 .b-igo
 {
     margin: 2em 0 6em 0;
@@ -371,6 +382,17 @@ footer
 }
 
 .b-footer-block__link:hover
+{
+    text-decoration: underline;
+}
+
+a
+{
+    color: red;
+    text-decoration: none;
+}
+
+a:hover
 {
     text-decoration: underline;
 }
