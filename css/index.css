@@ -211,6 +211,11 @@ header
 }
 
 /* Спикеры */
+.b-speakers
+{
+    margin-top: 2em;
+}
+
 .b-speaker
 {
     position: relative;
