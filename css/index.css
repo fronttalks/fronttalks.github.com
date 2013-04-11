@@ -120,6 +120,64 @@ header
     border-color: transparent #fff;
 }
 
+.b-navi-link
+{
+    position: fixed;
+    top: 50%;
+
+    width: 130px;
+    height: 130px;
+    margin-top: -50px;
+
+    overflow: hidden;
+}
+.b-navi-link__arrow
+{
+    position: relative;
+    padding: 40px;
+
+    transition: all 0.25s ease-out;
+
+    background: #888;
+    opacity: 0.3;
+}
+
+.b-navi-link:hover .b-navi-link__arrow
+{
+    opacity: 0.7;
+}
+.b-navi-link_type_prev
+{
+    left: 0;
+}
+
+.b-navi-link_type_prev .b-navi-link__arrow
+{
+    left: -30px;
+
+    border-radius: 0 500px 500px 0;
+}
+.b-navi-link_type_prev:hover .b-navi-link__arrow
+{
+    left: -20px;
+}
+
+.b-navi-link_type_next
+{
+    right: 0;
+}
+.b-navi-link_type_next .b-navi-link__arrow
+{
+    right: -30px;
+
+    border-radius: 500px 0 0 500px;
+}
+.b-navi-link_type_next:hover .b-navi-link__arrow
+{
+    right: -20px;
+}
+
+
 /* Содержимое */
 .b-next-event
 {
@@ -130,6 +188,11 @@ header
 
     text-shadow: 0 1px 1px #fff;
     color: #333;
+}
+
+.b-next-event img
+{
+    opacity: 0.4;
 }
 
 .b-meetup-place
@@ -226,7 +289,7 @@ header
     vertical-align: top;
 
     width: 30%;
-    min-height: 300px;
+    min-height: 320px;
     padding: 10px;
     margin: 0 0 2% 2%;
 
@@ -246,6 +309,22 @@ header
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.05) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.05) inset;
 }
+
+.b-speakers_view_presentations .b-speaker
+{
+    width: 47%;
+    min-height: 1000px;
+}
+
+.b-speaker__data
+{
+    padding: 20px 90px 0 0;
+}
+.b-speaker__presentation
+{
+    width: 500px;
+}
+
 .b-speaker:before,
 .b-speaker:after {
     content:"";

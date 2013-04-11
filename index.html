@@ -4,7 +4,7 @@
     <title>Ekaterinburg Front-End Talks</title>
 
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-    <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/index.css" type="text/css" media="screen" charset="utf-8"/>
 
     <meta content="Ekaterinburg Front-End Talks" property="og:title"/>
     <meta content="ogimage.png" property="og:image"/>
@@ -20,57 +20,56 @@
         </h1>
     </header>
 
-    <div class="b-next-event">Первая встреча была <span title="Это суббота">16 февраля 2013</span></div>
-    <div class="b-meetup-place">Скоро мы выложим все презентации с неё.</div>
+    <a href="/archive/1.html" class="b-navi-link b-navi-link_type_prev" title="Предыдущая встреча">
+        <img class="b-navi-link__arrow" src="img/left-arrow.svg" width="50" height="50"/>
+    </a>
+
+    <div class="b-next-event">Вторая встреча будет <span title="Это суббота">20 апреля 2013</span></div>
+    <!--<div class="b-meetup-place">Скоро мы выложим все презентации с неё.</div>-->
     <!--div class="b-meetup-place">Место встречи изменилось и теперь это <a href="http://maps.yandex.ru/-/CVRKZUJI">Freelance Café</a></div-->
-    <!--div class="b-igo"><a class="b-igo__link" href="http://fronttalks.timepad.ru/event/55934/#eventregisterform">Я пойду!</a></div-->
+    <div class="b-igo"><a class="b-igo__link" href="http://fronttalks.timepad.ru/event/55934/#eventregisterform">Я пойду!</a></div>
 
     <div class="b-speakers">
         <div class="b-speaker">
-            <div class="b-speaker__talk">Приведение типов в JavaScript</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="http://vk.com/id140316272">Анатолий Смилик</a></div>
-            <div class="b-speaker__thezises">Давайте вспомним и повторим, как JavaScript гибко преобразует один тип в другой. Освежать эту тему в памяти нужно регулярно, чтобы не искать причин, почему код работает не так как ожидалось.</div>
+            <div class="b-speaker__talk">Backbone. Шашлык на косточке</div>
+            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/mista_k">Владимир Кузнецов</a></div>
+            <div class="b-speaker__thezises">С классами в Backbone всё, вроде, понятно. Но где порождаются экземпляры этих классов? Как их связать между собой? Страшное слово «Полиморфизм».</div>
         </div>
         <div class="b-speaker">
-            <div class="b-speaker__talk">Зачем и как сделать сайт доступным?</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/matmuchrapna">Владимир Старков</a></div>
-            <div class="b-speaker__thezises">Ограничения людей, какие бывают ограничения? Кто эти люди? Зачем вообще тратить на это время и как убедить начальника, что это нужно делать?</div>
+            <div class="b-speaker__talk">Свой PhoneGap за 15 минут!</div>
+            <div class="b-speaker__person"><a class="b-speaker__link" href="http://vk.com/ai_boy">Алексей Охрименко</a></div>
+            <div class="b-speaker__thezises">Я создам очень простую и но расширяемую версию фреймворка аналогичного PhoneGap и на базе данного примера, вы узнаете и поймете как работает PhoneGap, изучите его внутренности и основные механизмы работы.</div>
         </div>
         <div class="b-speaker">
-            <div class="b-speaker__talk">Отладка расширений для IE и FF</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/denischistyakov">Денис Чистяков</a></div>
-            <div class="b-speaker__thezises">Я расскажу вам об особенностях отладки расширений для браузеров, а также о проблемах, с которыми вы не столкнетесь при разработке обычных сайтов.</div>
-        </div>
-        <div class="b-speaker">
-            <div class="b-speaker__talk">Послушные лэйауты</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/outring">Василий Аксёнов</a></div>
-            <div class="b-speaker__thezises">Ни одна из используемых сейчас технологий реализации раскладки элементов на странице изначально для этого не предназначалась. Какие же технологии для этого предназначены, какие лучше и чем плохи старые?</div>
-        </div>
-        <div class="b-speaker">
-            <div class="b-speaker__talk">Немного о grunt.js</div>
-            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/iadramelk">Алексей Иванов</a></div>
-            <div class="b-speaker__thezises">Автоматизация сборки и упаковки ресурсов, а также почему в версии 0.4.0 все будет гораздо лучше, чем сейчас.</div>
-        </div>
-        <div class="b-speaker">
-            <div class="b-speaker__talk">LMD</div>
+            <div class="b-speaker__talk">JavaScript на фронте и в тылу</div>
             <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/azproduction">Михаил Давыдов</a></div>
-            <div class="b-speaker__thezises">Я устал от AMD, пристально изучал другие сборщики и загрузчики &ndash; все не то... и мне пришлось сделать сборщик модулей моей мечты. В докладе будет о том, какие варианты рассматривались и что получилось в итоге.</div>
+            <div class="b-speaker__thezises">Какую технологию использовать внутреннюю или "народную"? Node.js в продакшене? В докладе я расскажу о жизни JavaScript разработчика в Яндексе.</div>
+        </div>
+        <div class="b-speaker">
+            <div class="b-speaker__talk">Пара слов об AngularJS</div>
+            <div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/maximgrach">Максим Грач</a></div>
+            <div class="b-speaker__thezises">JavaScript фреймворк, с которым я познакомился относительно недавно и который меня просто заворожил. Плюсы, которые я увидел, минусы, которые знаю, особенности, которые нужно знать.</div>
         </div>
         <!--<div class="b-speaker">-->
             <!--<div class="b-speaker__talk">Парадигма «Render&nbsp;&amp;&nbsp;React»</div>-->
             <!--<div class="b-speaker__person"><a class="b-speaker__link" href="https://twitter.com/olmokhov">Олег Мохов (@olmokhov)</a></div>-->
             <!--<div class="b-speaker__thezises">Современные веб-фреймворки зачастую забывают про то, что надо уметь не только отрисовывать HTML, но и реагировать на действия пользователя без перерисовки всей страницы.</div>-->
         <!--</div>-->
-        <!--<div class="b-speaker b-speaker_type_empty">-->
-            <!--<div class="b-speaker__talk">Слот свободен</div>-->
-            <!--<div class="b-speaker__person">и он может стать вашим! Напишите нам прямо сейчас, что вы есть и что-то хотите рассказать.</div>-->
-            <!--<div class="b-speaker__thezises">Написать тезисы и тему доклада можно через <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDB5Wll3UGVmQk5wVHdLaWFMNWk0c1E6MQ" target="_blank" class="b-speaker__link">форму на GoogleDocs</a>.</div>-->
-        <!--</div>-->
+        <div class="b-speaker b-speaker_type_empty">
+            <div class="b-speaker__talk">Слот свободен</div>
+            <div class="b-speaker__person">и он может стать вашим! Напишите нам прямо сейчас, что вы есть и что-то хотите рассказать.</div>
+            <div class="b-speaker__thezises">Написать тезисы и тему доклада можно через <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDB5Wll3UGVmQk5wVHdLaWFMNWk0c1E6MQ" target="_blank" class="b-speaker__link">форму на GoogleDocs</a>.</div>
+        </div>
+        <div class="b-speaker b-speaker_type_empty">
+            <div class="b-speaker__talk">Слот свободен</div>
+            <div class="b-speaker__person">и он может стать вашим! Напишите нам прямо сейчас, что вы есть и что-то хотите рассказать.</div>
+            <div class="b-speaker__thezises">Написать тезисы и тему доклада можно через <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDB5Wll3UGVmQk5wVHdLaWFMNWk0c1E6MQ" target="_blank" class="b-speaker__link">форму на GoogleDocs</a>.</div>
+        </div>
     </div>
 
     <div class="b-about">
         <h2 class="b-about__header">О мероприятии</h2>
-        <p class="b-about__description">В Екатеринбурге много Front-End разработчиков c уникальным опытом и хорошими знаниями, которыми они готовы поделиться. Именно поэтому нам пришла идея организовать регулярные встречи фронтендеров Екатеринбурга. Формат очень простой: сначала идут 6&nbsp;мини-докладов по 15 минут, а затем неформальное общение за кружечкой чая, кофе или другого любимого напитка на темы веб-разработки. Приходите, будет интересно. <strong>Встреча бесплатная, платим только за еду и напитки</strong>:) Встречи планируется делать регулярно, поэтому если вы хотите о чём-то рассказать на одной из наших встреч, то напишите нам об этом через <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDB5Wll3UGVmQk5wVHdLaWFMNWk0c1E6MQ" target="_blank">форму на GoogleDocs</a>.</p>
+        <p class="b-about__description">В Екатеринбурге много Front-End разработчиков c уникальным опытом и хорошими знаниями, которыми они готовы поделиться. Именно поэтому нам пришла идея организовать регулярные встречи фронтендеров Екатеринбурга. Формат очень простой: сначала идет серия из 6&nbsp;мини-докладов по 15 минут, а затем неформальное общение за кружечкой чая, кофе или другого любимого напитка на темы веб-разработки. Приходите, будет интересно. <strong>Встреча бесплатная, платим только за еду и напитки</strong>:) А если вы хотите о чём-то рассказать на одной из наших встреч, то напишите нам об этом через <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDB5Wll3UGVmQk5wVHdLaWFMNWk0c1E6MQ" target="_blank">форму на GoogleDocs</a>.</p>
     </div>
 
     <footer>
@@ -80,7 +79,7 @@
         </div>
         <div class="b-footer-block">
             <div class="b-footer-block__title">Команда</div>
-            <div class="b-footer-block__description">FrontTalks организуется силами <a class="b-footer-block__link" href="https://twitter.com/azproduction">Михаила&nbsp;Давыдова</a>, <a class="b-footer-block__link" href="https://twitter.com/VoIrina">Ирины&nbsp;Войчитской</a> и <a class="b-footer-block__link" href="https://twitter.com/olmokhov">Олега&nbsp;Мохова</a>.</div>
+            <div class="b-footer-block__description">FrontTalks организуется силами <a class="b-footer-block__link" href="https://twitter.com/azproduction">Михаила&nbsp;Давыдова</a>, <a class="b-footer-block__link" href="https://twitter.com/VoIrina">Ирины&nbsp;Войчитской</a>, <a class="b-footer-block__link" href="https://twitter.com/outring">Василия&nbsp;Аксёнова</a> и <a class="b-footer-block__link" href="https://twitter.com/olmokhov">Олега&nbsp;Мохова</a>.</div>
             <div class="b-footer-block__description">Дизайн <a href="http://www.twitter.com/m_besser" class="b-footer-block__link">Матти&nbsp;Бессера</a> и <a href="http://www.twitter.com/katemokhova" class="b-footer-block__link">Екатерины&nbsp;Моховой</a>.</div>
         </div>
         <div class="b-footer-block">
@@ -117,3 +116,4 @@
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>
+
