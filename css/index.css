@@ -155,6 +155,7 @@ header
 {
     position: fixed;
     top: 50%;
+    z-index: 1;
 
     width: 130px;
     height: 130px;
