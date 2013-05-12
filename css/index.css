@@ -24,7 +24,7 @@ body
 header
 {
     margin-bottom: 3em;
-    padding: 0 2%;
+    padding: 0 0 0 2%;
 
     vertical-align: middle;
 }
@@ -48,12 +48,17 @@ header
     background: red;
     color: #fff;
 }
+
 .b-head-logo2
 {
     position: relative;
 
     font-size: 200%;
     line-height: 90%;
+
+    margin-left: 15px;
+
+    float: left;
 
     display: inline-block;
     vertical-align: middle;
@@ -74,12 +79,12 @@ header
 
     position: relative;
 
-    display: inline-block;
     vertical-align: middle;
 
     padding: 10px;
-    margin: 1em 0;
-    width: 920px;
+    margin: 1em 0 1em 150px;
+
+    overflow: hidden;
 
     border: 5px solid #e7e0d3;
     color: #223035;
@@ -89,9 +94,6 @@ header
 }
 .b-head-description_type_smaller
 {
-    margin-left: 30px;
-    width: 940px;
-
     border: 0;
     box-shadow: 0 0 4px #bbb;
 }
@@ -347,6 +349,27 @@ header
     width: 47%;
     min-height: 1000px;
 }
+
+.b-speakers_view_big .b-speaker
+{
+    width: auto;
+    margin-right: 0;
+    min-height: auto;
+
+    display: block;
+}
+
+.b-speaker__photo
+{
+    float: left;
+}
+.b-speaker__talk-info-combined
+{
+    overflow: hidden;
+
+    padding-left: 30px;
+}
+
 
 .b-speaker__data
 {
