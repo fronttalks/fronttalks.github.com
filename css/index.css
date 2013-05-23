@@ -592,3 +592,32 @@ body.shout-page
     text-align: center;
     vertical-align: middle;
 }
+
+.b-change-timing
+{
+    font-size: 200px;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    top: 50%;
+    margin-top: -100px;
+
+    position: absolute;
+
+    opacity: 0.2;
+
+    background: rgba(0,0,0,0.1);
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+    color: #aaa;
+}
+.b-change-timing#minus
+{
+    left: 0;
+}
+.b-change-timing#plus
+{
+    right: 0;
+}
