@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>10 минут</title>
+
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <link rel="stylesheet" href="/css/index.css" type="text/css" media="screen" charset="utf-8"/>
+</head>
+<body>
+    <div class="b-shout"><span id="minutes">10</span> <span id="minutes-text">минут</span></div>
+    <script>
+        var updateMinutes = function(){
+            var minsDom = document.getElementById('minutes'),
+                mins = location.hash.split('#')[1] || 10;
+
+                minsDom.innerHTML = mins;
+
+            var minsTextDom = document.getElementById('minutes-text');
+
+            var mto10 = mins % 10,
+                mto100 = mins % 100,
+                text = '';
+
+            if (mto100 > 4 && mto100 <= 20) {
+                text = 'минут';
+            } else if (mto10 == 1) {
+                text = 'минута';
+            } else {
+                text = 'минуты';
+            }
+
+            minsTextDom.innerHTML = text;
+
+        };
+        window.onhashchange = updateMinutes;
+        window.onload = updateMinutes;
+    </script>
+</body>
+</html>
+
+
