@@ -598,10 +598,11 @@ body.shout-page
     font-size: 200px;
     width: 200px;
     height: 200px;
-    line-height: 200px;
+    line-height: 180px;
     text-align: center;
     top: 50%;
     margin-top: -100px;
+    vertical-align: middle;
 
     position: absolute;
 

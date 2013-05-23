@@ -5,12 +5,13 @@
 
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <link rel="stylesheet" href="/css/index.css" type="text/css" media="screen" charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 </head>
 <body class="shout-page">
     <div class="b-shout"><span id="minutes">10</span> <span id="minutes-text">минут</span></div>
 
     <div class="b-change-timing" id="plus" onclick="changeTiming(1)">+</div>
-    <div class="b-change-timing" id="minus" onclick="changeTiming(-1)">-</div>
+    <div class="b-change-timing" id="minus" onclick="changeTiming(-1)">&ndash;</div>
     <script>
         var changeTiming = function(timing){
             var mins = +(location.hash.split('#')[1] || 10);
