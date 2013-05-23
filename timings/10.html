@@ -1,12 +1,12 @@
 <!doctype html>
-<html>
+<html class="shout-page">
 <head>
     <title>10 минут</title>
 
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <link rel="stylesheet" href="/css/index.css" type="text/css" media="screen" charset="utf-8"/>
 </head>
-<body>
+<body class="shout-page">
     <div class="b-shout"><span id="minutes">10</span> <span id="minutes-text">минут</span></div>
     <script>
         var updateMinutes = function(){
@@ -21,7 +21,7 @@
                 mto100 = mins % 100,
                 text = '';
 
-            if (mto100 > 4 && mto100 <= 20) {
+            if (mto100 > 4 && mto100 < 20 || mto10 == 0) {
                 text = 'минут';
             } else if (mto10 == 1) {
                 text = 'минута';
