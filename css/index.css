@@ -621,3 +621,11 @@ body.shout-page
 {
     right: 0;
 }
+
+.b-program-placeholder {
+    margin: 50px 0;
+
+    font-size: 300%;
+
+    text-align: center;
+}
