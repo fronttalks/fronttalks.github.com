@@ -91,6 +91,7 @@ header
     background: #fff;
     -webkit-filter: drop-shadow(0 0 5px rgba(59, 59, 59, 0.3));
     filter: drop-shadow(0 0 5px rgba(59, 59, 59, 0.3));
+    -webkit-transform: translateZ(0);
 }
 .b-head-description_type_smaller
 {
