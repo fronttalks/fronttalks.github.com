@@ -427,6 +427,11 @@ header
     color: #333;
 }
 
+.b-timetable__talk-title
+{
+    font-size: 120%;
+}
+
 .b-speaker__person
 {
     font-weight: bold;
@@ -553,10 +558,20 @@ a:hover
     margin-top: 2em;
     margin-bottom: 2em;
 }
+.b-timetable_type_after-event .b-timetable__item
+{
+    margin-bottom: 4em;
+}
 
 .b-timetable__time
 {
     width: 20%;
+    float: left;
+}
+
+.b-timetable__speaker-foto
+{
+    width: 15%;
     float: left;
 }
 
@@ -566,7 +581,21 @@ a:hover
     float: left;
 }
 
-.b-timetable__people
+.b-timetable__people2
+{
+    margin-top: 0.5em;
+}
+.b-timetable__video
+{
+    overflow: hidden;
+    clear: both;
+
+    padding-top: 1em;
+}
+
+.b-timetable__people,
+.b-timetable__description,
+.b-timetable__presentation-link
 {
     font-size: 80%;
 

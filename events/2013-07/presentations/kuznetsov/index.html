@@ -1,0 +1,789 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Baron</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=792, user-scalable=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <script src="js/jquery.js"></script>
+    <script src="js/baron.full.js"></script>
+
+    <script src="js/jscrollpane.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/mwheelIntent.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/jscrollpane.css" />
+
+    <!--
+        To apply styles to the certain slides
+        set slide ID to get needed elements
+        -->
+    <style>
+        #Cover h2 {
+            margin:30px 0 0;
+            color:#FFF;
+            text-align:center;
+            font-size:70px;
+            }
+        #Cover p {
+            margin:10px 0 0;
+            text-align:center;
+            color:#FFF;
+            font-style:italic;
+            font-size:20px;
+            }
+            #Cover p a {
+                color:#FFF;
+                }
+        #Picture h2 {
+            color:#FFF;
+            }
+        #SeeMore h2 {
+            font-size:100px
+            }
+        #SeeMore img {
+            width:0.72em;
+            height:0.72em;
+            }
+    </style>
+</head>
+<body class="list">
+    <header class="caption">
+        <h1>Произвольная смена дизайна системного скроллбара</h1>
+        <p>Кузнецов Д.О.</p>
+    </header>
+
+    <section class="slide cover" id="Cover"><div>
+        <h2>Произвольная смена дизайна системного скроллбара</h2>
+        <p>Кузнецов Дмитрий, разработчик интерфейсов, 2GIS Online</p>
+        <img src="pictures/cover.jpg" alt="" />
+    </div></section>
+
+    <!-- 1 -->
+    <section class="slide structore"><div>
+        <h2>Структура доклада</h2>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li class="next">Способы кастомизации</li>
+            <li class="next">Барон: идея и принципы построения</li>
+            <li class="next">Плагины барона</li>
+            <li class="next">Сравнение барона с альтернативой</li>
+            <li class="next">Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Зачем кастомизировать скроллбар?</h2>
+        <ul>
+            <li>Видение дизайнера</li>
+            <li>Стратегическая возможность</li>
+            <li>Одностраничные приложения</li>
+        </ul>
+    </div></section>
+
+    <section class="slide">
+        <img src="pictures/design.png" style="width: 100%; height: 100%" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/xp.png" style="width: 100%; height: 100%" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/contrast.png" style="width: 100%; height: 100%" alt="">
+    </section>
+
+    <!-- 2 -->
+    <section class="slide structore"><div>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li class="current">Способы кастомизации</li>
+            <li>Барон: идея и принципы построения</li>
+            <li>Плагины барона</li>
+            <li>Сравнение барона с альтернативой</li>
+            <li>Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>CSS</h2>
+        <ul>
+            <li>Только webkit</li>
+            <li>Ограничения по расположению скроллбара</li>
+            <li>Непростой синтаксис</li>
+        </ul>
+        <pre>
+            <code><span style="color: #090">::-webkit-scrollbar-button:horizontal:decrement:hover</span> {</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>ECMAScript: эмуляция скролла</h2>
+        <ul>
+            <li class="good">40+ готовых решений</li>
+            <li class="good">Поддержка всех браузеров</li>
+            <li class="bad">Подмена механизма скролла</li>
+            <li class="bad">Трата ресурсов на эмуляцию</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>ECMAScript: только замена скроллбара</h2>
+        <ul>
+            <li class="good">3 готовых решения</li>
+            <li class="bad">Большой размер + проблемы с производительностью</li>
+            <li class="bad">Модификация DOM и манипуляция стилями</li>
+            <li class="bad">Ограничения по положению скроллбара</li>
+        </ul>
+    </div></section>
+
+    <!-- 3 -->
+    <section class="slide structore"><div>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li>Способы кастомизации</li>
+            <li class="current">Барон: идея и принципы построения</li>
+            <li>Плагины барона</li>
+            <li>Сравнение барона с альтернативой</li>
+            <li>Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Расчитываем ширину нативного скроллбара</h2>
+        <img src="pictures/delta.png" width="400" style="float: left; margin-right: 10px" />
+        <pre><code>DHTML: offsetWidth</code></pre>
+        <pre><code>Δ = offsetWidth - clientWidth</code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Прячем нативный рисуем свой</h2>
+        <img src="pictures/hide.png" width="600" style="float: left; margin-right: 10px" />
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Максимально свободная кастомизация</h2>
+        <pre>
+            <code>&lt;div class="<mark>clipper</mark>"&gt;</code>
+            <code>    &lt;div class="<mark>scroller</mark>"&gt;</code>
+            <code>        Content</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Минимальное вмешательство в DOM</h2>
+        <ul>
+            <li>Атрибуты data-*</li>
+            <li>Самые необходимые инлайн-стили</li>
+            <li>Максимизация управления UI через CSS</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Максимальное использование CSS</h2>
+        <ul>
+            <li><span class="good">Барон знает о</span>:<pre><code><mark>DOM-элементах</mark>; <mark>CSS-классах</mark>; <mark>событиях</mark>; <mark>координатах</mark></code></pre>
+            <li><span class="bad">Барон ничего не знает о</span>: <pre><code><mark>opacity</mark>; <mark>linear-gradient</mark>; <mark>box-shadow</mark>; <mark>position</mark></code></pre> ...и других свойствах CSS</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Оптимизация кода</h2>
+        <pre>
+            <code>width = scroller.offsetWidth</code>
+            <code class="next">height = scroller.offsetHeight</code>
+            <div class="next">
+                <code><mark>offset</mark> = ['offsetWidth', 'offsetHeight']</code>
+                <code>size = scroller[<mark>offset</mark>[direction]]</code>
+            </div>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Независимость</h2>
+        <pre>
+            <code><mark>$</mark>: function(selector, context) {</code>
+            <code>    return bonzo(qwery(selector, context));</code>
+            <code>},</code>
+            <code><mark>event</mark>: function(elem, event, func, mode) {</code>
+            <code>    if (mode == 'trigger') mode = 'fire';</code>
+            <code>    bean[mode || 'on'](elem, event, func);</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Расширяемость плагинами</h2>
+        <pre>
+            <code>$('.clipper').</code>
+            <code>    <mark>baron</mark>().<mark>fix</mark>().<mark>pull</mark>().<mark>controls</mark>().<mark>test</mark>().</code>
+            <code class="next">    <mark>dispose</mark>();</code>
+        </pre>
+    </div></section>
+
+    <!-- 4 -->
+    <section class="slide structore"><div>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li>Способы кастомизации</li>
+            <li>Барон: идея и принципы построения</li>
+            <li class="current">Плагины барона</li>
+            <li>Сравнение барона с альтернативой</li>
+            <li>Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Плагин <span class="good">fix</span></h2>
+        <div style="text-align: center">
+            <div class="clipper clipper_fix">
+                <div class="scroller">
+                    <div class="container">
+                        <div class="header">
+                            <h1 class="header__title">$('.clipper_fix').baron({</h1>
+                        </div>
+                        <pre>
+                            <code>    scroller: '.scroller',</code>
+                            <code>    bar: '.scroller__bar',</code>
+                            <code>    barOnCls: 'baron'</code>
+                        </pre>
+                        <div class="header">
+                            <h1 class="header__title">}).<mark>fix</mark>({</h1>
+                        </div>
+                        <pre>
+                            <code>    elements: '.header__title',</code>
+                            <code>    outside: 'header__title_state_fixed',</code>
+                            <code>    before: 'header__title_position_top',</code>
+                            <code>    after: 'header__title_position_bottom'</code>
+                            <code>});</code>
+                        </pre>
+
+                        <div class="header">
+                            <h1 class="header__title">CSS</h1>
+                        </div>
+                        <pre>
+                            <code>.header__title_state_fixed {</code>
+                            <code>    position: absolute;</code>
+                            <code>    z-index: 1;</code>
+                            <code>}</code>
+                        </pre>
+                        <div class="header">
+                            <h1 class="header__title">html</h1>
+                        </div>
+                        <pre>
+                            <code>&lt;div class="header"&gt;</code>
+                            <code>    &lt;h1 class="header__title"&gt;&lt;/h1&gt;</code>
+                            <code>&lt;/div&gt;</code>
+                        </pre>
+                    </div>
+                    <div class="scroller__bar-wrapper">
+                        <div class="scroller__bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clipper clipper_fix2" style="width:200px">
+                <div class="scroller">
+                    <p class="text">The title was quite common in most European countries often in a slightly modified form. In Italian, the word used was Barone. The corresponding title in the Holy Roman Empire was Freiherr.
+                    <div class="header">
+                        <h1 class="header__title">Sticky footer</h1>
+                    </div>
+                    <div class="scroller__bar"></div>
+                </div>
+            </div>
+        </div>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Плагин <span class="good">controls</span></h2>
+        <div style="text-align: center">
+            <div class="clipper clipper_controls">
+                <div class="scroller">
+                    <div class="container">
+                        <div class="header">
+                            <h1 class="header__title">$('.clipper_fix').baron({</h1>
+                        </div>
+                        <pre>
+                            <code>    scroller: '.scroller',</code>
+                            <code>    bar: '.scroller__bar',</code>
+                            <code>    barOnCls: 'baron'</code>
+                        </pre>
+                        <div class="header">
+                            <h1 class="header__title">}).fix({</h1>
+                        </div>
+                        <pre>
+                            <code>    elements: '.header__title',</code>
+                            <code>    outside: 'header__title_state_fixed',</code>
+                            <code>    before: 'header__title_position_top',</code>
+                            <code>    after: 'header__title_position_bottom'</code>
+                        </pre>
+                        <div class="header">
+                            <h1 class="header__title">}).<mark>controls</mark>({</h1>
+                        </div>
+                        <pre>
+                            <code>    track: '.scroller__track',</code>
+                            <code>    forward: '.scroller__up',</code>
+                            <code>    backward: '.scroller__down'</code>
+                            <code>});</code>
+                        </pre>
+
+                        <div class="header">
+                            <h1 class="header__title">CSS</h1>
+                        </div>
+                        <div class="header">
+                            <h1 class="header__title">html</h1>
+                        </div>
+                        <pre>
+                            <code>&lt;div class="scroller__track"&gt;&lt;/div&gt;</code>
+                            <code>&lt;div class="scroller__up"&gt;&lt;/div&gt;</code>
+                            <code>&lt;div class="scroller__down"&gt;&lt;/div&gt;</code>
+                        </pre>
+                    </div>
+                    <div class="scroller__track-visual"></div>
+                    <div class="scroller__control scroller__up"></div>
+                    <div class="scroller__control scroller__down"></div>
+                    <div class="scroller__bar-wrapper">
+                        <div class="scroller__bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Плагин <span class="good">test</span></h2>
+        <div style="text-align: center">
+        <div class="clipper clipper_test">
+            <div class="scroller">
+                <div class="container">
+                    <div class="header">
+                        <h1 class="header__title">$('.clipper_fix').baron({</h1>
+                    </div>
+                    <pre>
+                        <code>    scroller: '.scroller',</code>
+                        <code>    bar: '.scroller__bar',</code>
+                        <code>    barOnCls: 'baron'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).fix({</h1>
+                    </div>
+                    <pre>
+                        <code>    elements: '.header__title',</code>
+                        <code>    outside: 'header__title_state_fixed',</code>
+                        <code>    before: 'header__title_position_top',</code>
+                        <code>    after: 'header__title_position_bottom'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).controls({</h1>
+                    </div>
+                    <pre>
+                        <code>    track: '.scroller__track',</code>
+                        <code>    forward: '.scroller__up',</code>
+                        <code>    backward: '.scroller__down'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).<mark>test</mark>()</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2 class="pull-header">Плагин <span class="good">pull</span></h2>
+        <div style="text-align: center">
+        <div class="clipper clipper_pull">
+            <div class="scroller">
+                <div class="container">
+                    <div class="header">
+                        <h1 class="header__title">$('.clipper_fix').baron({</h1>
+                    </div>
+                    <pre>
+                        <code>    scroller: '.scroller',</code>
+                        <code>    bar: '.scroller__bar',</code>
+                        <code>    barOnCls: 'baron'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).fix({</h1>
+                    </div>
+                    <pre>
+                        <code>    elements: '.header__title',</code>
+                        <code>    outside: 'header__title_state_fixed',</code>
+                        <code>    before: 'header__title_position_top',</code>
+                        <code>    after: 'header__title_position_bottom'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).controls({</h1>
+                    </div>
+                    <pre>
+                        <code>    track: '.scroller__track',</code>
+                        <code>    forward: '.scroller__up',</code>
+                        <code>    backward: '.scroller__down'</code>
+                    </pre>
+                    <div class="header">
+                        <h1 class="header__title">}).test()</h1>
+                    </div>
+                    <div class="header">
+                        <h1 class="header__title">}).<mark>pull</mark>({</h1>
+                    </div>
+                    <pre>
+                        <code>    block: '.load',</code>
+                        <code>    elements: [{</code>
+                        <code>        self: '.load__value',</code>
+                        <code>        property: 'width'</code>
+                        <code>    }],</code>
+                        <code>    limit: 115,</code>
+                        <code>    callback: function() {</code>
+                        <code>        $('.load').css('background', 'red');</code>
+                        <code>    }</code>
+                    </pre>
+                    <div class="load">
+                        <div class="load__value"></div>
+                    </div>
+                </div>
+                <div class="scroller__bar-wrapper">
+                    <div class="scroller__bar"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- 5 -->
+    <section class="slide structore"><div>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li>Способы кастомизации</li>
+            <li>Барон: идея и принципы построения</li>
+            <li>Плагины барона</li>
+            <li class="current">Сравнение барона с альтернативой</li>
+            <li>Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Baron vs jScrollPane</h2>
+        <div class="baron-vs-jscrollpane">
+            <div class="clipper clipper_1">
+                <div class="scroller">
+                    <div class="container">
+                        <div class="header">
+                            <h1 class="header__title">Baron</h1>
+                        </div>
+                        <div class="text">Baron is a title of nobility. In the kingdom of England, the medieval Latin word baro, baronis was used originally to denote a tenant-in-chief of the early Norman kings who held his lands by the feudal tenure of "barony" (in Latin per baroniam), and who was entitled to attend the Great Council which by the 13th century had developed into the Parliament of England.</div>
+                        <div class="text">The title was quite common in most European countries often in a slightly modified form. In Italian, the word used was Barone. The corresponding title in the Holy Roman Empire was Freiherr.</div>
+                        <div class="header">
+                            <h1 class="header__title">Etymology</h1>
+                        </div>
+                        <div class="text">The word baron comes from the Old French baron, from a Late Latin baro "man; servant, soldier, mercenary" (so used in Salic Law; Alemannic Law has barus in the same sense). Isidore in the 7th century thought the word was from Greek βαρύς "heavy" (because of the "heavy work" done by mercenaries), but the word is presumably of Old Frankish origin, cognate with Old English beorn meaning "warrior, nobleman"). Cornutus in the first century already reports a word barones which he took to be of Gaulish origin. He glosses it as meaning servos militum and explains it as meaning "stupid", by reference to classical Latin bāro "simpleton, dunce"; because of this early reference, the word has also been suggested to derive from an otherwise unknown Celtic *bar, but OED takes this to be "a figment".</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Barons in the United Kingdom</h1>
+                        </div>
+                        <div class="text">In the Peerage of England, Peerage of Ireland, Peerage of Great Britain and the Peerage of the United Kingdom, barons form the lowest rank, placed immediately below viscounts. A female of baronial rank has the title baroness. Feudal baronies (or "baronies by tenure") are now obsolete in England and without any legal force but any such historical titles are held in gross, that is to say are deemed to be enveloped within a more modern extant peerage title also held by the holder, sometimes along with vestigial manorial rights and tenures by grand serjeanty.</div>
+                        <div class="text">William I introduced "baron" as a rank in England to distinguish the men who had pledged their loyalty to him under the feudal system. Previously, in the Anglo-Saxon kingdom of England, the king's companions held the title of earl and in Scotland, the title of thane. All who held their feudal barony "in-chief of the king", that is with the king as his immediate overlord, became alike barones regis ("barons of the king"), bound to perform a stipulated annual military service, and obliged to attend his council. Eventually the greatest of the nobles, especially those in the marches, such as the Earls of Chester or the Bishops of Durham, whose territories were often deemed palatinate, that is to say "worthy of a prince", might refer to their own tenants as "barons", where lesser magnates spoke simply of their "men" (homines).</div>
+                        <div class="text">Initially those who held land directly from the king by military service, from earls downwards, all bore alike the title of baron, which was thus the factor uniting all members of the ancient baronage as peers one of another. Under King Henry II, the Dialogus de Scaccario already distinguished between greater barons, who held per baroniam by knight's service, and lesser barons, who held manors. Technically, Lords of Manors are barons, or freemen, however they do not use the term as a title. John Selden in his esteemed work Titles of Honour writes, "The word Baro (Latin for Baron) hath been also so much communicated, that not only all Lords of Mannors have been from antient time, and are at this day called sometimes Barons (as in the stile of their Court Barons, which is Curia Baronis, &c. And I have read hors de son Barony in a barr to an Avowry for hors de son fee) But also the Judges of the Exchequer have it from antient time fixed on them."[4] Within a century of the Norman Conquest of 1066, as in the case of Thomas Becket in 1164, there arose the practice of sending to each greater baron a personal summons demanding his attendance at the King's Council, which evolved into the Parliament and later into the House of Lords, whilst as was stipulated in Magna Carta of 1215, the lesser barons of each county would receive a single summons as a group through the sheriff, and representatives only from their number would be elected to attend on behalf of the group. These representatives developed into the Knights of the Shire, elected by the County Court presided over by the sheriff, who themselves formed the precursor of the House of Commons. Thus appeared a definite distinction, which eventually had the effect of restricting to the greater barons alone the privileges and duties of peerage.</div>
+                        <div class="text">Later, the king started to create new baronies in one of two ways: by a writ of summons directing a chosen man to attend Parliament, and in an even later development by letters patent. Writs of summons became the normal method in medieval times, displacing the method of feudal barony, but creation of baronies by letters patent is the sole method adopted in modern times. Since the adoption of summons by writ, baronies thus no longer relate directly to land-holding, and thus no more feudal baronies needed thenceforth to be created. Following the Modus Tenendi Parliamenta of 1419, the Tenures Abolition Act 1660, the Feudal Tenure Act (1662), and the Fines and Recoveries Act of 1834, titles of feudal barony became obsolete and without legal force.</div>
+                        <div class="text">In the twentieth century Britain introduced the concept of non-hereditary life peers. All appointees to this distinction have been at the rank of baron. Life-peers are not counted as part of the aristocracy although in accordance with the tradition applied to hereditary peers they too are formally addressed in parliament by their peers as "The Noble Lord".</div>
+                        <div class="text">In addition, baronies are often used by their holders as subsidiary titles, for example as courtesy titles for the son and heir of an Earl or higher peer.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Scotland</h1>
+                        </div>
+                        <div class="text">In Scotland, the rank of baron is a rank of the ancient feudal nobility of Scotland and refers to a holder of a feudal barony, formerly a feudal superiority over a proper territorial entity erected into a free barony by a Crown Charter, and is not usually considered a rank of Peerage; as such it can be transferred by either inheritance or conveyance.</div>
+                        <div class="text">The Scottish equivalent of an English baron is a Lord of Parliament.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Style of address</h1>
+                        </div>
+                        <div class="text">Normally one refers to or addresses Baron [X] as Lord [X] and his wife as Lady [X]. In the case of women who hold baronies in their own right, they can be referred to as Baroness [X] as well as Lady [X]. In direct address, they can also be referred to as My Lord, Your Lordship, or Your Ladyship, but never as My Lady (except in the case of a female judge). The husband of a Baroness in her own right does not receive any style in her right. Children of Barons and Baronesses in their own right, whether hereditary or for life, have the style The Honourable [Forename] [Surname]. After the death of the father or mother, the child may continue to use the style Honourable.</div>
+                        <div class="text">Scottish feudal barons style their surnames similarly to Clan Chiefs, with the name of their barony following their name, as in John Smith of Edinburgh or John Smith, Baron of Edinburgh.[5] Most formally, and in writing, they are styled as The Much Honoured Baron of Edinburgh. Their wives are styled Lady Edinburgh, or The Baroness of Edinburgh. The phrase Lady of Edinburgh is wrong, if the lady in question does not hold a Scottish barony in her own right. Orally, Scottish barons may be addressed with the name of their barony, as in Edinburgh or else as Baron without anything else following, which if present would suggest a peerage barony. Informally, when referring to a Scots feudal baron in the third person, the name Laird of [X] is used or simply [X].</div>
+                        <div class="text">Non-Scottish barons are styled The Right Honourable The Lord [Barony]. Barons' wives are styled The Right Honourable The Lady [Barony]. Baronesses in their own right are either titled The Right Honourable The Baroness [Barony] or The Right Honourable The Lady [Barony], mainly based on personal preference (e.g., Margaret, Lady Thatcher and Brenda, Baroness Hale, both created baronesses in their own right). Note the order of the names. 'Lady Margaret Thatcher' would denote that she was the daughter of an earl, marquess or duke. Right Honourable is frequently abbreviated to Rt Hon. When referred to by the Sovereign in public instruments, The Right Honourable is changed to Our right trusty and well-beloved, with counsellor attached if they are a Privy Counsellor.</div>
+                        <div class="text">Courtesy barons are styled simply Lord [Barony], and their wives are Lady [Barony]. The style of Right Honourable and/or the article "The" in front of the title is not used for them.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Coronet</h1>
+                        </div>
+                        <div class="text">A person holding a peerage in the rank of baron is entitled to a coronet bearing six silver balls (called pearls) around the rim, equally spaced and all of equal size and height. The rim itself is neither jeweled, nor "chased" (which is the case for the coronets of peers of higher degree).</div>
+                        <div class="text">The actual coronet is mostly worn on certain ceremonial occasions, such as the coronation of a new monarch, but a baron can bear his coronet of rank on his coat of arms above the shield. In heraldry, the baron's coronet is shown with four of the balls visible.</div>
+                        <div class="text">Scottish feudal barons were entitled to a red cap of maintenance (chapeau) turned up ermine if petitioning for a grant or matriculation of a coat of arms between the 1930s and 2004. This chapeau is identical to the red cap worn by an English baron, but without the silver balls or gilt. This is sometimes depicted in armorial paintings between the shield and the helmet. Additionally, if the baron is the head of a family he may include a chiefly coronet which is similar to a ducal coronet, but with four strawberry leaves. Because the chapeau was a relatively recent innovation, a number of ancient Arms of Scottish feudal barons do not display the chapeau. Now Scottish feudal barons are principally recognised by the baron's helm, which in Scotland is a steel helmet with grille of three grilles, garnished in gold. Occasionally the great tilting-helm garnished with gold is shown, or a helmet befitting a higher rank, if held.</div>
+                    </div>
+                    <div class="scroller__bar-wrapper">
+                        <div class="scroller__bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clipper clipper_2">
+                <div class="scroller">
+                    <div class="header">
+                        <h1 class="header__title">Baron</h1>
+                    </div>
+                    <div class="text">Baron is a title of nobility. In the kingdom of England, the medieval Latin word baro, baronis was used originally to denote a tenant-in-chief of the early Norman kings who held his lands by the feudal tenure of "barony" (in Latin per baroniam), and who was entitled to attend the Great Council which by the 13th century had developed into the Parliament of England.</div>
+                    <div class="text">The title was quite common in most European countries often in a slightly modified form. In Italian, the word used was Barone. The corresponding title in the Holy Roman Empire was Freiherr.</div>
+                    <div class="header">
+                        <h1 class="header__title">Etymology</h1>
+                    </div>
+                    <div class="text">The word baron comes from the Old French baron, from a Late Latin baro "man; servant, soldier, mercenary" (so used in Salic Law; Alemannic Law has barus in the same sense). Isidore in the 7th century thought the word was from Greek βαρύς "heavy" (because of the "heavy work" done by mercenaries), but the word is presumably of Old Frankish origin, cognate with Old English beorn meaning "warrior, nobleman"). Cornutus in the first century already reports a word barones which he took to be of Gaulish origin. He glosses it as meaning servos militum and explains it as meaning "stupid", by reference to classical Latin bāro "simpleton, dunce"; because of this early reference, the word has also been suggested to derive from an otherwise unknown Celtic *bar, but OED takes this to be "a figment".</div>
+
+                    <div class="header">
+                        <h1 class="header__title">Barons in the United Kingdom</h1>
+                    </div>
+                    <div class="text">In the Peerage of England, Peerage of Ireland, Peerage of Great Britain and the Peerage of the United Kingdom, barons form the lowest rank, placed immediately below viscounts. A female of baronial rank has the title baroness. Feudal baronies (or "baronies by tenure") are now obsolete in England and without any legal force but any such historical titles are held in gross, that is to say are deemed to be enveloped within a more modern extant peerage title also held by the holder, sometimes along with vestigial manorial rights and tenures by grand serjeanty.</div>
+                    <div class="text">William I introduced "baron" as a rank in England to distinguish the men who had pledged their loyalty to him under the feudal system. Previously, in the Anglo-Saxon kingdom of England, the king's companions held the title of earl and in Scotland, the title of thane. All who held their feudal barony "in-chief of the king", that is with the king as his immediate overlord, became alike barones regis ("barons of the king"), bound to perform a stipulated annual military service, and obliged to attend his council. Eventually the greatest of the nobles, especially those in the marches, such as the Earls of Chester or the Bishops of Durham, whose territories were often deemed palatinate, that is to say "worthy of a prince", might refer to their own tenants as "barons", where lesser magnates spoke simply of their "men" (homines).</div>
+                    <div class="text">Initially those who held land directly from the king by military service, from earls downwards, all bore alike the title of baron, which was thus the factor uniting all members of the ancient baronage as peers one of another. Under King Henry II, the Dialogus de Scaccario already distinguished between greater barons, who held per baroniam by knight's service, and lesser barons, who held manors. Technically, Lords of Manors are barons, or freemen, however they do not use the term as a title. John Selden in his esteemed work Titles of Honour writes, "The word Baro (Latin for Baron) hath been also so much communicated, that not only all Lords of Mannors have been from antient time, and are at this day called sometimes Barons (as in the stile of their Court Barons, which is Curia Baronis, &c. And I have read hors de son Barony in a barr to an Avowry for hors de son fee) But also the Judges of the Exchequer have it from antient time fixed on them."[4] Within a century of the Norman Conquest of 1066, as in the case of Thomas Becket in 1164, there arose the practice of sending to each greater baron a personal summons demanding his attendance at the King's Council, which evolved into the Parliament and later into the House of Lords, whilst as was stipulated in Magna Carta of 1215, the lesser barons of each county would receive a single summons as a group through the sheriff, and representatives only from their number would be elected to attend on behalf of the group. These representatives developed into the Knights of the Shire, elected by the County Court presided over by the sheriff, who themselves formed the precursor of the House of Commons. Thus appeared a definite distinction, which eventually had the effect of restricting to the greater barons alone the privileges and duties of peerage.</div>
+                    <div class="text">Later, the king started to create new baronies in one of two ways: by a writ of summons directing a chosen man to attend Parliament, and in an even later development by letters patent. Writs of summons became the normal method in medieval times, displacing the method of feudal barony, but creation of baronies by letters patent is the sole method adopted in modern times. Since the adoption of summons by writ, baronies thus no longer relate directly to land-holding, and thus no more feudal baronies needed thenceforth to be created. Following the Modus Tenendi Parliamenta of 1419, the Tenures Abolition Act 1660, the Feudal Tenure Act (1662), and the Fines and Recoveries Act of 1834, titles of feudal barony became obsolete and without legal force.</div>
+                    <div class="text">In the twentieth century Britain introduced the concept of non-hereditary life peers. All appointees to this distinction have been at the rank of baron. Life-peers are not counted as part of the aristocracy although in accordance with the tradition applied to hereditary peers they too are formally addressed in parliament by their peers as "The Noble Lord".</div>
+                    <div class="text">In addition, baronies are often used by their holders as subsidiary titles, for example as courtesy titles for the son and heir of an Earl or higher peer.</div>
+
+                    <div class="header">
+                        <h1 class="header__title">Scotland</h1>
+                    </div>
+                    <div class="text">In Scotland, the rank of baron is a rank of the ancient feudal nobility of Scotland and refers to a holder of a feudal barony, formerly a feudal superiority over a proper territorial entity erected into a free barony by a Crown Charter, and is not usually considered a rank of Peerage; as such it can be transferred by either inheritance or conveyance.</div>
+                    <div class="text">The Scottish equivalent of an English baron is a Lord of Parliament.</div>
+
+                    <div class="header">
+                        <h1 class="header__title">Style of address</h1>
+                    </div>
+                    <div class="text">Normally one refers to or addresses Baron [X] as Lord [X] and his wife as Lady [X]. In the case of women who hold baronies in their own right, they can be referred to as Baroness [X] as well as Lady [X]. In direct address, they can also be referred to as My Lord, Your Lordship, or Your Ladyship, but never as My Lady (except in the case of a female judge). The husband of a Baroness in her own right does not receive any style in her right. Children of Barons and Baronesses in their own right, whether hereditary or for life, have the style The Honourable [Forename] [Surname]. After the death of the father or mother, the child may continue to use the style Honourable.</div>
+                    <div class="text">Scottish feudal barons style their surnames similarly to Clan Chiefs, with the name of their barony following their name, as in John Smith of Edinburgh or John Smith, Baron of Edinburgh.[5] Most formally, and in writing, they are styled as The Much Honoured Baron of Edinburgh. Their wives are styled Lady Edinburgh, or The Baroness of Edinburgh. The phrase Lady of Edinburgh is wrong, if the lady in question does not hold a Scottish barony in her own right. Orally, Scottish barons may be addressed with the name of their barony, as in Edinburgh or else as Baron without anything else following, which if present would suggest a peerage barony. Informally, when referring to a Scots feudal baron in the third person, the name Laird of [X] is used or simply [X].</div>
+                    <div class="text">Non-Scottish barons are styled The Right Honourable The Lord [Barony]. Barons' wives are styled The Right Honourable The Lady [Barony]. Baronesses in their own right are either titled The Right Honourable The Baroness [Barony] or The Right Honourable The Lady [Barony], mainly based on personal preference (e.g., Margaret, Lady Thatcher and Brenda, Baroness Hale, both created baronesses in their own right). Note the order of the names. 'Lady Margaret Thatcher' would denote that she was the daughter of an earl, marquess or duke. Right Honourable is frequently abbreviated to Rt Hon. When referred to by the Sovereign in public instruments, The Right Honourable is changed to Our right trusty and well-beloved, with counsellor attached if they are a Privy Counsellor.</div>
+                    <div class="text">Courtesy barons are styled simply Lord [Barony], and their wives are Lady [Barony]. The style of Right Honourable and/or the article "The" in front of the title is not used for them.</div>
+
+                    <div class="header">
+                        <h1 class="header__title">Coronet</h1>
+                    </div>
+                    <div class="text">A person holding a peerage in the rank of baron is entitled to a coronet bearing six silver balls (called pearls) around the rim, equally spaced and all of equal size and height. The rim itself is neither jeweled, nor "chased" (which is the case for the coronets of peers of higher degree).</div>
+                    <div class="text">The actual coronet is mostly worn on certain ceremonial occasions, such as the coronation of a new monarch, but a baron can bear his coronet of rank on his coat of arms above the shield. In heraldry, the baron's coronet is shown with four of the balls visible.</div>
+                    <div class="text">Scottish feudal barons were entitled to a red cap of maintenance (chapeau) turned up ermine if petitioning for a grant or matriculation of a coat of arms between the 1930s and 2004. This chapeau is identical to the red cap worn by an English baron, but without the silver balls or gilt. This is sometimes depicted in armorial paintings between the shield and the helmet. Additionally, if the baron is the head of a family he may include a chiefly coronet which is similar to a ducal coronet, but with four strawberry leaves. Because the chapeau was a relatively recent innovation, a number of ancient Arms of Scottish feudal barons do not display the chapeau. Now Scottish feudal barons are principally recognised by the baron's helm, which in Scotland is a steel helmet with grille of three grilles, garnished in gold. Occasionally the great tilting-helm garnished with gold is shown, or a helmet befitting a higher rank, if held.</div>
+                </div>
+            </div>
+            <p class="next">Сравнили механику baron и jScrollPane</p>
+        </div>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2 style="text-align: center">На самом деле нет</h2>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Что можно сравнить</h2>
+        <table>
+            <tr>
+                <td></td>
+                <td>Baron</td>
+                <td>jScrollPane</td>
+            </tr>
+            <tr>
+                <td>Общий размер (gzip, kB)</td>
+                <td class="good">2.11 + 4.47</td>
+                <td class="bad">4.52 + 30.1</td>
+            </tr>
+            <tr>
+                <td>DOM</td>
+                <td class="good">0</td>
+                <td class="bad">+9</td>
+            </tr>
+            <tr>
+                <td>Расположение скроллбара</td>
+                <td class="good">Свободное</td>
+                <td class="bad">Фиксированное</td>
+            </tr>
+            <tr>
+                <td>Механизм</td>
+                <td class="good">Нативный</td>
+                <td class="bad">Эмуляция</td>
+            </tr>
+            <tr>
+                <td>Поддержка</td>
+                <td class="">overflow: scroll</td>
+                <td class="good">все браузеры</td>
+            </tr>
+            <tr>
+                <td>Быстрый старт</td>
+                <td class="bad">Сложнее</td>
+                <td class="good">Просто</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="bad"><img src="pictures/baron-stat.png" /></td>
+                <td class="good"><img src="pictures/jsp-stat.png" /></td>
+            </tr>
+        </table>
+    </div></section>
+
+    <!-- 6 -->
+    <section class="slide structore"><div>
+        <ol>
+            <li>Зачем кастомизировать скроллбар?</li>
+            <li>Способы кастомизации</li>
+            <li>Барон: идея и принципы построения</li>
+            <li>Плагины барона</li>
+            <li>Сравнение барона с альтернативой</li>
+            <li class="current">Туториал по использованию</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>HTML</h2>
+        <pre>
+            <code>&lt;div class="<mark>clipper</mark>"&gt;</code>
+            <code>    &lt;div class="<mark>scroller</mark>"&gt;</code>
+            <code>        Content</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+            <code>&lt;div class="<mark>scroller__bar</mark>"&gt;&lt;/div&gt;</code>
+        </pre>
+    </div></section>
+
+    <section class="slide min"><div>
+        <h2>CSS</h2>
+        <pre>
+            <code>.<mark>clipper</mark> {</code>
+            <code>    overflow: hidden;</code>
+            <code>    position: relative;</code>
+            <code>}</code>
+            <code>.<mark>scroller</mark> {</code>
+            <code>    overflow-y: scroll;</code>
+            <code>}</code>
+            <code>.<mark>scroller::-webkit-scrollbar</mark> {</code>
+            <code>    width: 0;</code>
+            <code>}</code>
+            <code>.<mark>scroller__bar</mark> {</code>
+            <code>    position: absolute;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Код</h2>
+        <pre>
+            <code>$('.profit').baron({</code>
+            <code>    scroller: '.scroller',</code>
+            <code>    bar: $('.profit .scroller__bar'),</code>
+            <code>    barOnCls: 'baron'</code>
+            <code>});</code>
+        </pre>
+    </div></section>
+
+    <section class="slide profit"><div>
+        <h2>Profit</h2>
+        <div class="clipper clipper_profit">
+                <div class="scroller">
+                    <div class="container">
+                        <div class="header">
+                            <h1 class="header__title">Baron</h1>
+                        </div>
+                        <div class="text">Baron is a title of nobility. In the kingdom of England, the medieval Latin word baro, baronis was used originally to denote a tenant-in-chief of the early Norman kings who held his lands by the feudal tenure of "barony" (in Latin per baroniam), and who was entitled to attend the Great Council which by the 13th century had developed into the Parliament of England.</div>
+                        <div class="text">The title was quite common in most European countries often in a slightly modified form. In Italian, the word used was Barone. The corresponding title in the Holy Roman Empire was Freiherr.</div>
+                        <div class="header">
+                            <h1 class="header__title">Etymology</h1>
+                        </div>
+                        <div class="text">The word baron comes from the Old French baron, from a Late Latin baro "man; servant, soldier, mercenary" (so used in Salic Law; Alemannic Law has barus in the same sense). Isidore in the 7th century thought the word was from Greek βαρύς "heavy" (because of the "heavy work" done by mercenaries), but the word is presumably of Old Frankish origin, cognate with Old English beorn meaning "warrior, nobleman"). Cornutus in the first century already reports a word barones which he took to be of Gaulish origin. He glosses it as meaning servos militum and explains it as meaning "stupid", by reference to classical Latin bāro "simpleton, dunce"; because of this early reference, the word has also been suggested to derive from an otherwise unknown Celtic *bar, but OED takes this to be "a figment".</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Barons in the United Kingdom</h1>
+                        </div>
+                        <div class="text">In the Peerage of England, Peerage of Ireland, Peerage of Great Britain and the Peerage of the United Kingdom, barons form the lowest rank, placed immediately below viscounts. A female of baronial rank has the title baroness. Feudal baronies (or "baronies by tenure") are now obsolete in England and without any legal force but any such historical titles are held in gross, that is to say are deemed to be enveloped within a more modern extant peerage title also held by the holder, sometimes along with vestigial manorial rights and tenures by grand serjeanty.</div>
+                        <div class="text">William I introduced "baron" as a rank in England to distinguish the men who had pledged their loyalty to him under the feudal system. Previously, in the Anglo-Saxon kingdom of England, the king's companions held the title of earl and in Scotland, the title of thane. All who held their feudal barony "in-chief of the king", that is with the king as his immediate overlord, became alike barones regis ("barons of the king"), bound to perform a stipulated annual military service, and obliged to attend his council. Eventually the greatest of the nobles, especially those in the marches, such as the Earls of Chester or the Bishops of Durham, whose territories were often deemed palatinate, that is to say "worthy of a prince", might refer to their own tenants as "barons", where lesser magnates spoke simply of their "men" (homines).</div>
+                        <div class="header">
+                            <h1 class="header__title">Scotland del</h1>
+                        </div>
+                        <div class="text">Initially those who held land directly from the king by military service, from earls downwards, all bore alike the title of baron, which was thus the factor uniting all members of the ancient baronage as peers one of another. Under King Henry II, the Dialogus de Scaccario already distinguished between greater barons, who held per baroniam by knight's service, and lesser barons, who held manors. Technically, Lords of Manors are barons, or freemen, however they do not use the term as a title. John Selden in his esteemed work Titles of Honour writes, "The word Baro (Latin for Baron) hath been also so much communicated, that not only all Lords of Mannors have been from antient time, and are at this day called sometimes Barons (as in the stile of their Court Barons, which is Curia Baronis. And I have read hors de son Barony in a barr to an Avowry for hors de son fee) But also the Judges of the Exchequer have it from antient time fixed on them."[4] Within a century of the Norman Conquest of 1066, as in the case of Thomas Becket in 1164, there arose the practice of sending to each greater baron a personal summons demanding his attendance at the King's Council, which evolved into the Parliament and later into the House of Lords, whilst as was stipulated in Magna Carta of 1215, the lesser barons of each county would receive a single summons as a group through the sheriff, and representatives only from their number would be elected to attend on behalf of the group. These representatives developed into the Knights of the Shire, elected by the County Court presided over by the sheriff, who themselves formed the precursor of the House of Commons. Thus appeared a definite distinction, which eventually had the effect of restricting to the greater barons alone the privileges and duties of peerage.</div>
+                        <div class="header">
+                            <h1 class="header__title">Scotland del</h1>
+                        </div>
+                        <div class="text">Later, the king started to create new baronies in one of two ways: by a writ of summons directing a chosen man to attend Parliament, and in an even later development by letters patent. Writs of summons became the normal method in medieval times, displacing the method of feudal barony, but creation of baronies by letters patent is the sole method adopted in modern times. Since the adoption of summons by writ, baronies thus no longer relate directly to land-holding, and thus no more feudal baronies needed thenceforth to be created. Following the Modus Tenendi Parliamenta of 1419, the Tenures Abolition Act 1660, the Feudal Tenure Act (1662), and the Fines and Recoveries Act of 1834, titles of feudal barony became obsolete and without legal force.</div>
+                        <div class="text">In the twentieth century Britain introduced the concept of non-hereditary life peers. All appointees to this distinction have been at the rank of baron. Life-peers are not counted as part of the aristocracy although in accordance with the tradition applied to hereditary peers they too are formally addressed in parliament by their peers as "The Noble Lord".</div>
+                        <div class="text">In addition, baronies are often used by their holders as subsidiary titles, for example as courtesy titles for the son and heir of an Earl or higher peer.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Scotland</h1>
+                        </div>
+                        <div class="text">In Scotland, the rank of baron is a rank of the ancient feudal nobility of Scotland and refers to a holder of a feudal barony, formerly a feudal superiority over a proper territorial entity erected into a free barony by a Crown Charter, and is not usually considered a rank of Peerage; as such it can be transferred by either inheritance or conveyance.</div>
+                        <div class="text">The Scottish equivalent of an English baron is a Lord of Parliament.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Style of address</h1>
+                        </div>
+                        <div class="text">Normally one refers to or addresses Baron [X] as Lord [X] and his wife as Lady [X]. In the case of women who hold baronies in their own right, they can be referred to as Baroness [X] as well as Lady [X]. In direct address, they can also be referred to as My Lord, Your Lordship, or Your Ladyship, but never as My Lady (except in the case of a female judge). The husband of a Baroness in her own right does not receive any style in her right. Children of Barons and Baronesses in their own right, whether hereditary or for life, have the style The Honourable [Forename] [Surname]. After the death of the father or mother, the child may continue to use the style Honourable.</div>
+                        <div class="text">Scottish feudal barons style their surnames similarly to Clan Chiefs, with the name of their barony following their name, as in John Smith of Edinburgh or John Smith, Baron of Edinburgh.[5] Most formally, and in writing, they are styled as The Much Honoured Baron of Edinburgh. Their wives are styled Lady Edinburgh, or The Baroness of Edinburgh. The phrase Lady of Edinburgh is wrong, if the lady in question does not hold a Scottish barony in her own right. Orally, Scottish barons may be addressed with the name of their barony, as in Edinburgh or else as Baron without anything else following, which if present would suggest a peerage barony. Informally, when referring to a Scots feudal baron in the third person, the name Laird of [X] is used or simply [X].</div>
+                        <div class="text">Non-Scottish barons are styled The Right Honourable The Lord [Barony]. Barons' wives are styled The Right Honourable The Lady [Barony]. Baronesses in their own right are either titled The Right Honourable The Baroness [Barony] or The Right Honourable The Lady [Barony], mainly based on personal preference (e.g., Margaret, Lady Thatcher and Brenda, Baroness Hale, both created baronesses in their own right). Note the order of the names. 'Lady Margaret Thatcher' would denote that she was the daughter of an earl, marquess or duke. Right Honourable is frequently abbreviated to Rt Hon. When referred to by the Sovereign in public instruments, The Right Honourable is changed to Our right trusty and well-beloved, with counsellor attached if they are a Privy Counsellor.</div>
+                        <div class="text">Courtesy barons are styled simply Lord [Barony], and their wives are Lady [Barony]. The style of Right Honourable and/or the article "The" in front of the title is not used for them.</div>
+
+                        <div class="header">
+                            <h1 class="header__title">Coronet</h1>
+                        </div>
+                        <div class="text">A person holding a peerage in the rank of baron is entitled to a coronet bearing six silver balls (called pearls) around the rim, equally spaced and all of equal size and height. The rim itself is neither jeweled, nor "chased" (which is the case for the coronets of peers of higher degree).</div>
+                        <div class="text">The actual coronet is mostly worn on certain ceremonial occasions, such as the coronation of a new monarch, but a baron can bear his coronet of rank on his coat of arms above the shield. In heraldry, the baron's coronet is shown with four of the balls visible.</div>
+                        <div class="text">Scottish feudal barons were entitled to a red cap of maintenance (chapeau) turned up ermine if petitioning for a grant or matriculation of a coat of arms between the 1930s and 2004. This chapeau is identical to the red cap worn by an English baron, but without the silver balls or gilt. This is sometimes depicted in armorial paintings between the shield and the helmet. Additionally, if the baron is the head of a family he may include a chiefly coronet which is similar to a ducal coronet, but with four strawberry leaves. Because the chapeau was a relatively recent innovation, a number of ancient Arms of Scottish feudal barons do not display the chapeau. Now Scottish feudal barons are principally recognised by the baron's helm, which in Scotland is a steel helmet with grille of three grilles, garnished in gold. Occasionally the great tilting-helm garnished with gold is shown, or a helmet befitting a higher rank, if held.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroller__bar"></div>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Итого</h2>
+        <ul>
+            <li>Свободная CSS-кастомизация скроллбара</li>
+            <li>Автоматическая поддержка всего где есть overflow: scroll</li>
+            <li>Fallback - нативный скроллбар</li>
+            <li>Размер с зависимостями: от 6 кБ в gzip</li>
+            <li>Система плагинов + 4 плагина в коробке</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <iframe class="iframe" src="http://maps.2gis.ru/#!/ekaterinburg/center/60.634228%2C56.837333/zoom/12/state/firms/what/%D0%BF%D0%B8%D0%B2%D0%BE/action/search/page/1/sort/relevance/rpage/1/ppage/1"></iframe>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>В планах</h2>
+        <ul>
+            <li>Плагин для мега-быстрого старта</li>
+            <li>Плагин для ликвидации зависимостей</li>
+            <li>Ваши идеи?</li>
+            <li>Автоматическое тестирование</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Автотесты (Phantom JS)</h2>
+        <ul style="position: relative; z-index: 1">
+            <li class="good">Прогон всех тестов при коммите</li>
+            <li class="good">Отнимает 3-5 секунд + 5 минут просмотра тестов в реальных браузерах</li>
+            <li class="good">Невозможно просмотреть или забыть тест</li>
+        </ul>
+        <img src="pictures/auto-tests.png" style="position: absolute; bottom: 0; right: 0; z-index: 0" />
+    </div></section>
+
+    <section class="slide about"><div>
+        <h2>About</h2>
+        <ul>
+            <li><img src="pictures/i-logo.png" class="logo" />Кузнецов Дмитрий, разработчик интерфейсов 2GIS Online
+            <li><img src="pictures/2gis-logo.png" class="logo" /><a href="mailto:dm.kuznecov@2gis.ru">dm.kuznecov@2gis.ru</a>
+            <li><img src="pictures/github-logo.png" class="logo" /><a href="https://github.com/Diokuz/baron">github.com/Diokuz/baron</a>
+            <li><img src="pictures/habr-logo.png" class="logo" /><a href="http://habrahabr.ru/company/2gis/blog/169359/">habrahabr.ru/company/2gis</a>
+        </ul>
+    </div></section>
+
+    <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+    <!--
+        To hide progress bar from entire presentation
+        just remove “progress” element.
+        -->
+    <div class="progress"><div></div></div>
+    <script src="shower/shower.js"></script>
+    <!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+</body>
+</html>
