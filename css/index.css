@@ -593,6 +593,11 @@ a:hover
     padding-top: 1em;
 }
 
+.b-timetable__video iframe
+{
+    max-width: 100%;
+}
+
 .b-timetable__people,
 .b-timetable__description,
 .b-timetable__presentation-link
