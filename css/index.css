@@ -654,7 +654,9 @@ a:hover
 {
     clear: both;
     white-space: nowrap;
-    padding-top: 1em;
+    margin-top: 1em;
+
+    background: #000;
 }
 .b-timetable__talk
 {
