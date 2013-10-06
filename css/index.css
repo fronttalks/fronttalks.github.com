@@ -656,6 +656,10 @@ a:hover
     white-space: nowrap;
     padding-top: 1em;
 }
+.b-timetable__talk
+{
+    padding-bottom: 1em;
+}
 .b-timetable__video-and-presentation .b-timetable__video
 {
     display: inline-block;
