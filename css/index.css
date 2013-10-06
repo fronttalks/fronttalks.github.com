@@ -8,7 +8,7 @@ body, html
 
 html
 {
-    background: #f3f2f0 url(/img/bg.jpg);
+    background: #f2ede7 url(/img/bg.jpg);
 }
 
 body
@@ -17,6 +17,66 @@ body
 
     max-width: 1140px;
     margin: 0 auto;
+    padding-top: 40px;
+}
+
+nav
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    font-size: 16px;
+
+    background: #555;
+    color: #fff;
+}
+
+nav a,
+nav .selected,
+nav .inactive
+{
+    padding: 3px 8px;
+
+    display: inline-block;
+
+    color: #fff;
+}
+
+nav .year + *
+{
+    margin-left: -8px;
+}
+
+nav a:hover,
+nav .selected
+{
+    background: #000;
+    text-decoration: none;
+    color: #f2ede7;
+}
+nav .inactive
+{
+    color: #888;
+}
+
+nav .wrapper
+{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+nav .wrapper__inner
+{
+    padding: 0 3%;
+}
+nav .wrapper .year
+{
+    position: absolute;
+    
+    margin-left: -60px;
+    margin-top: 3px;
+    color: #aaa;
 }
 
 /* Шапка */
@@ -585,17 +645,27 @@ a:hover
 {
     margin-top: 0.5em;
 }
-.b-timetable__video
-{
-    overflow: hidden;
-    clear: both;
-
-    padding-top: 1em;
-}
 
 .b-timetable__video iframe
 {
     max-width: 100%;
+}
+.b-timetable__video-and-presentation
+{
+    clear: both;
+    white-space: nowrap;
+    padding-top: 1em;
+}
+.b-timetable__video-and-presentation .b-timetable__video
+{
+    display: inline-block;
+    vertical-align: top;
+}
+.b-timetable__video-and-presentation .b-timetable__presentation
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 422px;
 }
 
 .b-timetable__people,
