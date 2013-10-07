@@ -72,9 +72,7 @@ nav .wrapper__inner
 }
 nav .wrapper .year
 {
-    position: absolute;
-    
-    margin-left: -60px;
+    margin-right: 12px;
     margin-top: 3px;
     color: #aaa;
 }
