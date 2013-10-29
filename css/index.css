@@ -20,6 +20,29 @@ body
     padding-top: 40px;
 }
 
+.meetup
+{
+    background: #000;
+}
+
+.b-meetup
+{
+    max-width: 100%;
+    min-width: 480px;
+    margin: 0;
+    padding-top: 0;
+
+    background: url(/fronttalks.jpg) 50% 0 no-repeat;
+    background-size: auto 1200px;
+}
+
+.b-meetup__holder
+{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
 nav
 {
     position: absolute;
@@ -521,7 +544,8 @@ header
 
 .b-about
 {
-    margin: 0 3% 5em;
+    margin: 5em 0;
+    padding: 0 3%;
 }
 
 .b-header,
@@ -604,6 +628,28 @@ a:hover
 .l-page-padding
 {
     padding: 0 3%;
+}
+
+.l-page-padding_type_meetup,
+.back1
+{
+    position: relative;
+    z-index: 1;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.l-page-padding_type_meetup:before,
+.back1:before
+{
+    position: absolute;
+    z-index: -1;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    content: '';
+
+    opacity: 0.9;
+
+    background: #f2ede7 url(/img/bg.jpg);
 }
 
 .b-timetable__item
