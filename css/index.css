@@ -784,3 +784,8 @@ body.shout-page
 
     text-align: center;
 }
+
+.twitter-follow-button
+{
+    vertical-align: middle;
+}
