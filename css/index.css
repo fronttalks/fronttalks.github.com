@@ -67,6 +67,10 @@ nav .inactive
     color: #fff;
 }
 
+nav .year ~ .year
+{
+    margin-left: 20px;
+}
 nav .year + *
 {
     margin-left: -8px;
