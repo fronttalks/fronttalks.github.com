@@ -142,12 +142,9 @@ nav:after {
 .title__text {
     display: inline-block;
     vertical-align: middle;
-    width: 390px;
-    text-align: left;
 }
 
 .title__text:first-of-type {
-    text-align: right;
 }
 
 .social {
