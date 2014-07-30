@@ -128,7 +128,10 @@ nav:after {
 }
 .title__tickets
 {
-    color: #ccc;
+    font-weight: normal;
+    font-family: Arial;
+    text-transform: none;
+    color: #fff;
 }
 
 .title__logo {
