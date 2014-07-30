@@ -125,6 +125,7 @@ nav:after {
 .title__register:hover
 {
     background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
 }
 .title__tickets
 {
