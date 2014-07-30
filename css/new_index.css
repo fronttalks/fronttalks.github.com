@@ -103,18 +103,20 @@ nav:after {
 }
 
 
-.title__register {
+.title__registration {
+    font-size: 18px;
     position: absolute;
     bottom: 25px;
 
-    font-size: 40px;
-    display: block;
     width: 750px;
     left: 50%;
     color: #fff;
-    padding: 20px 0 16px;
     margin: 0 auto 50px -375px;
-
+}
+.title__register {
+    font-size: 40px;
+    display: block;
+    padding: 20px 0 16px;
     text-transform: none;
     text-decoration: none;
 
@@ -123,6 +125,10 @@ nav:after {
 .title__register:hover
 {
     background: rgba(255, 255, 255, 0.2);
+}
+.title__tickets
+{
+    color: #ccc;
 }
 
 .title__logo {
