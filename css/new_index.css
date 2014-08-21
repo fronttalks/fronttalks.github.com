@@ -82,6 +82,7 @@ nav:after {
     font-size: 100%;
     display: inline-block;
     vertical-align: middle;
+    white-space: normal;
 }
 
 .title {
@@ -98,6 +99,7 @@ nav:after {
     min-width: 1000px;
     max-width: 1140px;
     margin: 0 auto;
+    white-space: nowrap;
 }
 
 .content-wrapper
