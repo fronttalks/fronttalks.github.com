@@ -223,13 +223,19 @@ nav:after {
     padding: 0;
 }
 
-
+.place h2,
 .programm h2
 {
     font-size: 60px;
     text-align: center;
 }
 
+.place {
+    font-size: 20px;
+}
+.place strong {
+    font-size: 120%;
+}
 .programm
 {
     font-size: 14px;
