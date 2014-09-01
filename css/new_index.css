@@ -232,9 +232,16 @@ nav:after {
 
 .place {
     font-size: 20px;
+    width: 100%;
+    overflow-x: hidden;
 }
 .place strong {
     font-size: 120%;
+}
+.place ymaps
+{
+    float: right;
+    clear: both;
 }
 .programm
 {
