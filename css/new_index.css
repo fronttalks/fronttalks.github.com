@@ -238,7 +238,7 @@ nav:after {
 .place strong {
     font-size: 120%;
 }
-.place ymaps
+.place > ymaps
 {
     float: right;
     clear: both;
