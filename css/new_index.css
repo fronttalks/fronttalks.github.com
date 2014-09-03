@@ -224,7 +224,8 @@ nav:after {
 }
 
 .place h2,
-.programm h2
+.programm h2,
+.friends h2
 {
     font-size: 60px;
     text-align: center;
@@ -331,3 +332,16 @@ nav:after {
     margin-top: 1.5em;
 }
 
+
+.friends {
+    text-align: center;
+}
+.friends a {
+    vertical-align: top;
+    line-height: 150px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.friends img {
+    vertical-align: middle;
+}
