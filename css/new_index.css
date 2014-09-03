@@ -341,6 +341,10 @@ nav:after {
     line-height: 150px;
     display: inline-block;
     margin-right: 10px;
+    opacity: 0.8;
+}
+.friends a:hover {
+    opacity: 1;
 }
 .friends img {
     vertical-align: middle;
