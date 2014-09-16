@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Index</title>
+
+    <style type="text/css" media="screen">
+        img {
+            -webkit-filter: blur(60px);
+        }
+    </style>
+
+    <script src="pixelate.js"></script>
+    <script src="blur.js"></script>
+    <script>
+    window.onload = function () {
+        var img = document.getElementById('a');
+
+        var a = new Image();
+        a.src = img.getAttribute('src');
+
+        a.addEventListener('load', function () {
+            console.time('a');
+            stackBlurImage('a', 'b', 150);
+            setTimeout(function(){
+                document.getElementById('a').closePixelate([{ shape : 'rect', resolution : 40, resolutionY: 80, size: 80, sizeY: 40, offset: 0, alpha: 1 }]);
+            }, 0);
+            console.timeEnd('a');
+        });
+    }</script>
+    
+    
+</head>
+<body>
+    <img id="a" src="http://transphoto.ru/photo/05/67/35/567358.jpg"/>
+    <canvas id="b"></canvas>
+
+    <!--<svg class="svgRoot" width="2000" height="1337">-->
+        <!--<defs>-->
+            <!--<filter id="pixelate">-->
+                <!--<feMorphology operator="erode" radius="5" />-->
+                <!--<feMorphology operator="dilate" radius="15" />-->
+            <!--</filter>-->
+        <!--</defs>-->
+        <!--<image x="0" y="0" width="2000px" height="1337px" xlink:href="https://pbs.twimg.com/media/BxT553mIgAEuHKW.jpg:large" filter="url(#pixelate)" />-->
+    <!--</svg>-->
+</body>
+</html>
