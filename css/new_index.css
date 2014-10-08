@@ -104,7 +104,7 @@ nav:after {
 
 .content-wrapper
 {
-    background: #000;
+    background: rgba(0,0,0,0.8);
 }
 
 .content-wrapper__inner
@@ -262,9 +262,10 @@ nav:after {
     margin-bottom: 2em;
     padding-left: 15%;
 }
-.b-timetable_type_after-event .b-timetable__item
+.b-timetable_after_event .b-timetable__item
 {
     margin-bottom: 4em;
+    padding-left: 0;
 }
 
 .b-timetable__time
@@ -276,11 +277,19 @@ nav:after {
     float: left;
     margin-left: -15%;
 }
+.b-timetable_after_event .b-timetable__time
+{
+    display: none;
+}
 
 .b-timetable__speaker-foto
 {
     width: 142px;
     float: right;
+}
+.b-timetable_after_event .b-timetable__speaker-foto
+{
+    float: left
 }
 
 .b-timetable__action
