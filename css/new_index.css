@@ -13,6 +13,10 @@ html
     background: url('/img/ekb.jpg') 50% -300px no-repeat fixed #004e64;
     height: 100%;
 }
+html.meetup
+{
+    background: url('/img/meetup.jpg') 50% -300px no-repeat fixed #000;
+}
 
 body
 {
@@ -164,10 +168,16 @@ nav:after {
 
 .title__text {
     display: inline-block;
+    width: 7em;
     vertical-align: middle;
 }
 
 .title__text:first-of-type {
+}
+.meetup .title__registration,
+.meetup .title__text
+{
+    text-shadow: 0 0 6px #000;
 }
 
 .social {
