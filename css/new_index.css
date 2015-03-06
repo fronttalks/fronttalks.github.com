@@ -17,6 +17,10 @@ html.meetup
 {
     background: url('/img/meetup.jpg') 50% -300px no-repeat fixed #000;
 }
+html.dump
+{
+    background: url('/dumpback.jpg') 50% -300px no-repeat fixed #000;
+}
 
 body
 {
