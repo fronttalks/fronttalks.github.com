@@ -173,6 +173,7 @@ nav:after {
 .title__text {
     display: inline-block;
     width: 7.8em;
+    text-shadow: 0 0 11px #000;
     vertical-align: middle;
 }
 
