@@ -218,11 +218,7 @@ nav:after {
     text-align: left;
 
     font-size: 40px;
-    margin: 60px 0 40px 150px;
-}
-.previous-events h2
-{
-    margin: 0 0 20px;
+    margin: 60px 0 40px 0;
 }
 .previous-events ul 
 {
@@ -239,10 +235,11 @@ nav:after {
 
 .place h2,
 .programm h2,
-.friends h2
+.friends h2,
+.previous-events h2
 {
+    text-align: left;
     font-size: 60px;
-    text-align: center;
 }
 
 .place {
