@@ -86,11 +86,15 @@ nav:after {
     vertical-align: middle;
 }
 .title__wrapper {
-    font-size: 100%;
+    font-size: 80%;
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
 }
+.title__wrapper:hover {
+    
+}
+
 
 .title {
     background: url('../img/ekb-2.jpg');
@@ -101,7 +105,6 @@ nav:after {
     color: #fff;
 
     vertical-align: middle;
-    text-transform: uppercase;
     text-align: center;
     height: 100%;
     min-height: 800px;
@@ -125,23 +128,22 @@ nav:after {
 
 .title__registration {
     font-size: 18px;
-    position: absolute;
-    bottom: 25px;
-
-    width: 750px;
-    left: 50%;
     color: #fff;
-    margin: 0 auto 50px -375px;
+
 }
 .title__register {
     font-size: 40px;
     display: block;
     padding: 20px 0 16px;
+    height: 100px;
+    box-sizing: border-box;
     text-transform: none;
     text-decoration: none;
     color: #fff;
 
     border: 1px solid #fff;
+    border-top: 0;
+    text-shadow: 0 0 11px #000;
 }
 .title__register:hover
 {
@@ -157,12 +159,9 @@ nav:after {
 }
 
 .title__logo {
-    display: inline-block;
-    vertical-align: middle;
+    float: left;
     padding: 25px;
-
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
+    background: white;
 }
 
 .title__logo img {
@@ -170,10 +169,20 @@ nav:after {
     margin-bottom: 10px;
 }
 
-.title__text {
+.title__text-wrapper {
+    background: #000;
+    vertical-align: top;
+    padding: 12px 0 8px;
+    height: 80px;
+    line-height: 1.5;
     display: inline-block;
-    width: 7.8em;
-    text-shadow: 0 0 11px #000;
+    text-align: left;
+}
+
+.title__text {
+    font-weight: 100;
+    display: inline-block;
+    padding: 0 30px;
     vertical-align: middle;
 }
 
